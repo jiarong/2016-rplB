@@ -1,0 +1,10 @@
+pick_otus:enable_rev_strand_match True
+pick_otus:max_accepts 1
+pick_otus:max_rejects 8
+pick_otus:stepwords 8
+pick_otus:word_length 8
+assign_taxonomy:id_to_taxonomy_fp /mnt/home/guojiaro/Documents/db/qiimeDB/Silva/taxa_mapping/Silva_RDP_taxa_mapping_family.txt
+assign_taxonomy:reference_seqs_fp /mnt/home/guojiaro/Documents/db/qiimeDB/Silva/rep_set/Silva_108_rep_set.fna
+align_seqs:template_fp /mnt/home/guojiaro/Documents/db/qiimeDB/Silva/core_aligned/Silva_108_core_aligned_seqs.fasta
+alpha_diversity:metrics PD_whole_tree,chao1,shannon,observed_species
+beta_diversity:metrics unweighted_unifrac,weighted_unifrac,bray_curtis
