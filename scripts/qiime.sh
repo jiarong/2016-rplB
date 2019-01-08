@@ -1,11 +1,4 @@
 #! /bin/bash
-#PBS -q main
-#PBS -l nodes=1:ppn=4,walltime=4:00:00
-#PBS -l mem=22gb
-#PBS -j oe
-#PBS -A ged-intel11
-TERM=linux
-export TERM
 set -e
 module load screed
 module load NumPy
@@ -33,5 +26,3 @@ Mincount=$(grep '^ Min:' biom.sum |xargs|cut -f2 -d ' ')
 Mincount=${Mincount/.*}
 echo "Subsample $Mincount seqs"
 core_diversity_analyses.py -o core_diversity_analysis.out -i otu_table_mc2_w_tax_no_pynast_failures_tax_filtered.biom -m $Mapfile -t rep_set.tre -p $Paramsfile -c $Cols -e $Mincount --recover_from_failure -aO $Cpu
-
-qstat -f ${PBS_JOBID}
